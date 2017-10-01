@@ -4,23 +4,37 @@
             Algemeen
         </p>
         <ul class="menu-list">
-            <li><a>Aanmelden</a></li>
-            <li><a>Spelregels</a></li>
-            <li><a>Statistieken</a></li>
+            <li>
+                <router-link to="/aanmelden" class="navbar-item">Aanmelden</router-link>
+            </li>
+            <li>
+                <router-link to="/spelregels" class="navbar-item">Spelregels</router-link>
+            </li>
+            <li>
+                <router-link to="/statistieken" class="navbar-item">Statistieken</router-link>
+            </li>
         </ul>
         <p class="menu-label">
             Administratie
         </p>
         <ul class="menu-list">
-            <li><a>Gebruikers</a></li>
-            <li><a>Maaltijden</a></li>
+            <li>
+                <router-link to="/gebruikers" class="navbar-item">Gebruikers</router-link>
+            </li>
+            <li>
+                <router-link to="/maaltijden" class="navbar-item">Maaltijden</router-link>
+            </li>
         </ul>
         <p class="menu-label">
             Gebruiker
         </p>
         <ul class="menu-list">
-            <li><a>Profiel</a></li>
-            <li><a>Uitloggen</a></li>
+            <li>
+                <router-link to="/profiel" class="navbar-item">Profiel</router-link>
+            </li>
+            <li>
+                <a>Uitloggen</a>
+            </li>
         </ul>
     </aside>
 </template>

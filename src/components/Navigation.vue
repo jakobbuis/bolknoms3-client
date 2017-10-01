@@ -11,19 +11,20 @@
 
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a href="#" class="navbar-item">Aanmelden</a>
-                <a href="#" class="navbar-item">Spelregels</a>
-                <a href="#" class="navbar-item">Statistieken</a>
+                <router-link to="/aanmelden" class="navbar-item">Aanmelden</router-link>
+                <router-link to="/spelregels" class="navbar-item">Spelregels</router-link>
+                <router-link to="/statistieken" class="navbar-item">Statistieken</router-link>
+
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">Administratie</a>
                     <div class="navbar-dropdown">
-                        <a href="#" class="navbar-item">Gebruikers</a>
-                        <a href="#" class="navbar-item">Maaltijden</a>
+                        <router-link to="/gebruikers" class="navbar-item">Gebruikers</router-link>
+                        <router-link to="/maaltijden" class="navbar-item">Maaltijden</router-link>
                     </div>
                 </div>
             </div>
             <div class="navbar-end">
-                <a href="#" class="navbar-item">User photo</a>
+                <router-link to="/profiel" class="navbar-item">Photoding</router-link>
                 <a href="#" class="navbar-item" title="Uitloggen">
                     <i class="fa fa-power-off" aria-hidden="true"></i>
                 </a>
