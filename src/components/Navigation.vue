@@ -56,4 +56,8 @@ h1 {
     font-size: x-large;
     padding: 0.25em 1em 0 1em;
 }
+.is-active {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #FF3333;
+}
 </style>
