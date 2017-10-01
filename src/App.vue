@@ -18,7 +18,7 @@ export default {
 
     data() {
         return {
-            showMobileNav: true,
+            showMobileNav: false,
         };
     },
 };
