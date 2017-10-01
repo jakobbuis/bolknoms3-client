@@ -1,10 +1,14 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
+import axios from 'axios';
 import App from './App';
 import router from './router';
 
 Vue.config.productionTip = false;
+
+// Configure axios
+axios.defaults.baseURL = 'http://api.lcl/api/';
 
 /* eslint-disable no-new */
 new Vue({
