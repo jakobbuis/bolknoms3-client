@@ -3,9 +3,10 @@
         <div class="navbar-brand">
             <h1>Bolknoms</h1>
 
-            <div class="navbar-burger">
-
-            </div>
+            <button class="button navbar-burger is-dark" @click="toggleNavigation"
+                    :class="{'is-active': mobile}">
+                <span /><span /><span />
+            </button>
         </div>
 
         <div class="navbar-menu">
@@ -33,6 +34,17 @@
 
 <script>
 export default {
+    props: ['showMobileNav'],
+    data() {
+        return { mobile: this.showMobileNav };
+    },
+
+    methods: {
+        toggleNavigation() {
+            this.mobile = !this.mobile;
+            this.$emit('update:showMobileNav', this.mobile);
+        },
+    },
 };
 </script>
 
