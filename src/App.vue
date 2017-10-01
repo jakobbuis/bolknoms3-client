@@ -4,7 +4,9 @@
     <Navigation :showMobileNav.sync="showMobileNav" ></Navigation>
     <MobileNavigation v-show="showMobileNav"></MobileNavigation>
 
-    <router-view></router-view>
+    <main>
+        <router-view></router-view>
+    </main>
   </div>
 </template>
 
@@ -26,4 +28,9 @@ export default {
 
 <style lang="scss">
 @import 'node_modules/bulma/bulma.sass';
+
+main {
+    max-width: 800px;
+    margin: 2em;
+}
 </style>
