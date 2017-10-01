@@ -60,4 +60,8 @@ h1 {
     padding-bottom: 3px;
     border-bottom: 3px solid #FF3333;
 }
+.navbar-dropdown {
+    border-top-width: 0;
+    padding-top: 0;
+}
 </style>
