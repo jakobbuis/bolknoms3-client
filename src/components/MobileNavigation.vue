@@ -29,3 +29,19 @@
 export default {
 };
 </script>
+
+<style scoped>
+    .menu   {
+        width: 150px;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        padding: 1em;
+        background-color: #363636;
+    }
+
+    a {
+        padding-right: 0;
+        color: white;
+    }
+</style>
