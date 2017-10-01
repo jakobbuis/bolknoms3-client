@@ -11,6 +11,7 @@
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a href="#" class="navbar-item">Aanmelden</a>
+                <a href="#" class="navbar-item">Spelregels</a>
                 <a href="#" class="navbar-item">Statistieken</a>
                 <div href="#" class="navbar-item has-dropdown is-hoverable">
                     <a href="#" class="navbar-link">Administratie</a>
