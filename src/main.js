@@ -9,6 +9,7 @@ Vue.config.productionTip = false;
 
 // Configure axios
 axios.defaults.baseURL = 'http://api.lcl/api/';
+window.axios = axios;
 
 /* eslint-disable no-new */
 new Vue({
