@@ -52,6 +52,7 @@ export default {
         text-align: left;
         padding: 1em;
         background-color: #363636;
+        z-index: 999;
     }
 
     a {
