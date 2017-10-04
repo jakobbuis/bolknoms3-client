@@ -33,7 +33,7 @@ export default {
 
     computed: {
         date() {
-            return moment(this.meal_timestamp).format('dddd D MMMM');
+            return moment(this.meal.meal_timestamp).format('dddd D MMMM');
         },
     },
 };

@@ -2,7 +2,7 @@
     <div>
         <h1>Aanmelden voor maaltijden</h1>
         <div class="columns" v-for="set in sets">
-            <Meal v-for="meal in set" :key="meal.id"></Meal>
+            <Meal v-for="meal in set" :key="meal.id" :meal="meal"></Meal>
         </div>
     </div>
 </template>
