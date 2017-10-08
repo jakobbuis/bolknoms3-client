@@ -20,7 +20,7 @@ export default{
         return { categories: [] };
     },
 
-    mounted() {
+    created() {
         axios.get('/rules').then((response) => {
             this.categories = response.data.data;
         });
