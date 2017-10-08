@@ -1,9 +1,9 @@
 <template>
-    <div class="column is-one-third">
+    <div class="column is-one-half">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-16by10">
-                    <img src="http://via.placeholder.com/320x200" alt="Placeholder image">
+                    <img src="http://via.placeholder.com/640x180" alt="Placeholder image">
                 </figure>
             </div>
 
@@ -11,9 +11,14 @@
                 <div class="media">
                     <div class="media-content">
                         <p class="title is-4">{{ date }}</p>
-                        <p class="subtitle is-6">@johnsmith</p>
+                        <p class="subtitle is-6">
+                            <i class="fa fa-fw fa-clock-o"></i> {{ deadline }}
+                            <i class="fa fa-fw fa-cutlery"></i> {{ time }}
+                        </p>
                     </div>
                 </div>
+
+                <button class="button" @click="register">+</button>
 
                 <div class="content">
 
@@ -35,6 +40,31 @@ export default {
         date() {
             return moment(this.meal.meal_timestamp).format('dddd D MMMM');
         },
+
+        deadline() {
+            return `${moment(this.meal.meal_timestamp).format('HH:mm')} uur`;
+        },
+
+        time() {
+            return `${moment(this.meal.registration_close).format('HH:mm')} uur`;
+        },
+    },
+
+    methods: {
+        register() {
+
+        },
     },
 };
 </script>
+
+<style scoped>
+    button {
+        width: 3em;
+        height: 3em;
+        position: absolute;
+        top: 5.25em;
+        right: 1em;
+        border-radius: 50%;
+    }
+</style>
