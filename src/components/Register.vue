@@ -21,7 +21,7 @@ export default {
 
     mounted() {
         axios.get('/meals/upcoming').then((response) => {
-            this.sets = _.chunk(response.data.data, 3);
+            this.sets = _.chunk(response.data.data, 2);
         });
     },
 };

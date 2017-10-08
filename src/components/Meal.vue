@@ -1,5 +1,5 @@
 <template>
-    <div class="column is-one-half">
+    <div class="column is-half">
         <div class="card">
             <div class="card-image">
                 <figure class="image is-16by10">
