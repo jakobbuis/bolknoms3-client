@@ -53,6 +53,9 @@ export default {
                     token,
                     username: response.data.user_id,
                 });
+
+                // Clean up the state
+                window.store.commit('oauthState', null);
             });
         });
     },
