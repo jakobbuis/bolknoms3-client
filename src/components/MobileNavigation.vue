@@ -43,14 +43,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import OAuth from '../services/OAuth';
 
 export default {
-    data() {
-        return {
-            loggedIn: this.$store.getters.loggedIn,
-        };
-    },
+
+    computed: mapGetters(['loggedIn']),
 
     methods: {
         login() {
