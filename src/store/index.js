@@ -20,9 +20,9 @@ export default {
 
         // Logout from the app by wiping all credentials
         logout(state) {
-            state.token = null;
-            state.state = null;
-            state.user = null;
+            state.oauth.token = null;
+            state.oauth.state = null;
+            state.oauth.user = null;
         },
 
         login(state, { token, username }) {
