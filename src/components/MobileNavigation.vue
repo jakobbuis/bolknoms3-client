@@ -29,18 +29,38 @@
             Gebruiker
         </p>
         <ul class="menu-list">
-            <li>
+            <li v-if="loggedIn">
                 <router-link to="/profiel" class="navbar-item">Profiel</router-link>
             </li>
-            <li>
+            <li v-if="loggedIn" @click="logout">
                 <a>Uitloggen</a>
+            </li>
+            <li v-if="!loggedIn" @click="login">
+                <a>Inloggen</a>
             </li>
         </ul>
     </aside>
 </template>
 
 <script>
+import OAuth from '../services/OAuth';
+
 export default {
+    data() {
+        return {
+            loggedIn: this.$store.getters.loggedIn,
+        };
+    },
+
+    methods: {
+        login() {
+            OAuth.toAuthorizationFlow();
+        },
+
+        logout() {
+            this.$store.commit('logout');
+        },
+    },
 };
 </script>
 
