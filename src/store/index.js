@@ -5,6 +5,11 @@ export default {
             state: null,
             user: null,
         },
+        user: {
+            name: null,
+            picture: null,
+            diet: null,
+        },
     },
 
     mutations: {
@@ -28,6 +33,11 @@ export default {
         login(state, { token, username }) {
             state.oauth.token = token;
             state.oauth.user = { username, level: null };
+        },
+
+        userDetails(state, data) {
+            console.log(data);
+            state.user.diet = data.diet;
         },
     },
 
