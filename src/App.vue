@@ -28,9 +28,4 @@ export default {
 
 <style lang="scss">
 @import 'node_modules/bulma/bulma.sass';
-
-main {
-    max-width: 800px;
-    margin: 2em;
-}
 </style>
