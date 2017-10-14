@@ -50,5 +50,6 @@ ol {
 }
 .content {
     margin: 2em;
+    max-width: 40em;
 }
 </style>
