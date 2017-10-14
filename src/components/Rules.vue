@@ -1,10 +1,19 @@
 <template>
-    <main class="content">
-        <h1>Spelregels</h1>
-        <p>
-            Voor het gebruik van Bolknoms en het mee-eten aan de eettafel gelden een paar spelregels.
-        </p>
-        <section v-for="category in categories">
+    <main>
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Spelregels
+                    </h1>
+                    <h2 class="subtitle">
+                        Voor het gebruik van Bolknoms en het mee-eten aan de eettafel gelden een paar spelregels.
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="content" v-for="category in categories">
             <h2>{{ category.title }}</h2>
             <ol>
                 <li v-for="rule in category.rules">{{ rule }}</li>
@@ -38,5 +47,8 @@ h2 {
 ol {
     margin-top: 0;
     margin-bottom: 1em;
+}
+.content {
+    margin: 2em;
 }
 </style>
