@@ -23,10 +23,17 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar-end">
+
+            <div class="navbar-end" v-if="loggedIn">
                 <router-link to="/profiel" class="navbar-item">Photoding</router-link>
-                <a href="#" class="navbar-item" title="Uitloggen">
-                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                <a href="#" class="navbar-item" title="Uitloggen" @click.prevent="logout">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> Uitloggen
+                </a>
+            </div>
+
+            <div class="navbar-end" v-if="!loggedIn">
+                <a href="#" class="navbar-item" title="Inloggen" @click.prevent="login">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i> Inloggen
                 </a>
             </div>
         </div>
@@ -34,16 +41,31 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import OAuth from '../services/OAuth';
+
 export default {
+
     props: ['showMobileNav'],
+
     data() {
         return { mobile: this.showMobileNav };
     },
+
+    computed: mapGetters(['loggedIn']),
 
     methods: {
         toggleNavigation() {
             this.mobile = !this.mobile;
             this.$emit('update:showMobileNav', this.mobile);
+        },
+
+        login() {
+            OAuth.toAuthorizationFlow();
+        },
+
+        logout() {
+            this.$store.commit('logout');
         },
     },
 };
@@ -63,5 +85,8 @@ h1 {
 .navbar-dropdown {
     border-top-width: 0;
     padding-top: 0;
+}
+.navbar-end i.fa {
+    margin-right: 0.5em;
 }
 </style>
