@@ -25,7 +25,9 @@
             </div>
 
             <div class="navbar-end" v-if="loggedIn">
-                <router-link to="/profiel" class="navbar-item">Photoding</router-link>
+                <router-link to="/profiel" class="navbar-item">
+                    <img :src="profilePhoto" alt="Wow, jij ziet er goed uit vandaag!" class="mugshot">
+                </router-link>
                 <a href="#" class="navbar-item" title="Uitloggen" @click.prevent="logout">
                     <i class="fa fa-sign-out" aria-hidden="true"></i> Uitloggen
                 </a>
@@ -52,7 +54,15 @@ export default {
         return { mobile: this.showMobileNav };
     },
 
-    computed: mapGetters(['loggedIn']),
+    computed: {
+        ...mapGetters(['loggedIn']),
+
+        profilePhoto() {
+            const uid = this.$store.state.oauth.user.username;
+            const token = this.$store.state.oauth.token.access_token;
+            return `https://people.debolk.nl/persons/${uid}/photo/128/128?access_token=${token}`;
+        },
+    },
 
     methods: {
         toggleNavigation() {
@@ -88,5 +98,9 @@ h1 {
 }
 .navbar-end i.fa {
     margin-right: 0.5em;
+}
+
+.mugshot {
+    border-radius: 50%;
 }
 </style>
