@@ -31,7 +31,7 @@
                 </a>
                 <div class="navbar-dropdown right-side">
                     <p class="menu-label">
-                        Jonathan van der Wijk
+                        Gebruiker
                     </p>
                     <router-link to="/profiel" class="navbar-item">Mijn profiel</router-link>
                     <a href="#" class="navbar-item" @click.prevent="login">Uitloggen</a>
