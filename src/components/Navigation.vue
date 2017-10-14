@@ -34,7 +34,7 @@
                         Gebruiker
                     </p>
                     <router-link to="/profiel" class="navbar-item">Mijn profiel</router-link>
-                    <a href="#" class="navbar-item" @click.prevent="login">Uitloggen</a>
+                    <a href="#" class="navbar-item" @click.prevent="logout">Uitloggen</a>
                 </div>
             </div>
         </div>
