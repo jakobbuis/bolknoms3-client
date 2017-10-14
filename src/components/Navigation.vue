@@ -4,42 +4,48 @@
             <h1>Bolknoms</h1>
 
             <button class="button navbar-burger is-dark" @click="toggleNavigation"
-                    :class="{'is-active': mobile}">
-                <span /><span /><span />
-            </button>
-        </div>
+            :class="{'is-active': mobile}">
+            <span /><span /><span />
+        </button>
+    </div>
 
-        <div class="navbar-menu">
-            <div class="navbar-start">
-                <router-link to="/aanmelden" class="navbar-item">Aanmelden</router-link>
-                <router-link to="/spelregels" class="navbar-item">Spelregels</router-link>
-                <router-link to="/statistieken" class="navbar-item">Statistieken</router-link>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <router-link to="/aanmelden" class="navbar-item">Aanmelden</router-link>
+            <router-link to="/spelregels" class="navbar-item">Spelregels</router-link>
+            <router-link to="/statistieken" class="navbar-item">Statistieken</router-link>
 
-                <div href="#" class="navbar-item has-dropdown is-hoverable">
-                    <a href="#" class="navbar-link">Administratie</a>
-                    <div class="navbar-dropdown">
-                        <router-link to="/gebruikers" class="navbar-item">Gebruikers</router-link>
-                        <router-link to="/maaltijden" class="navbar-item">Maaltijden</router-link>
-                    </div>
+            <div href="#" class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">Administratie</a>
+                <div class="navbar-dropdown">
+                    <router-link to="/gebruikers" class="navbar-item">Gebruikers</router-link>
+                    <router-link to="/maaltijden" class="navbar-item">Maaltijden</router-link>
                 </div>
             </div>
+        </div>
 
-            <div class="navbar-end" v-if="loggedIn">
-                <router-link to="/profiel" class="navbar-item">
+        <div class="navbar-end" v-if="loggedIn">
+            <div href="#" class="navbar-item has-dropdown is-hoverable">
+                <a href="#" class="navbar-link">
                     <img :src="profilePhoto" alt="Wow, jij ziet er goed uit vandaag!" class="mugshot">
-                </router-link>
-                <a href="#" class="navbar-item" title="Uitloggen" @click.prevent="logout">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i> Uitloggen
                 </a>
-            </div>
-
-            <div class="navbar-end" v-if="!loggedIn">
-                <a href="#" class="navbar-item" title="Inloggen" @click.prevent="login">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i> Inloggen
-                </a>
+                <div class="navbar-dropdown right-side">
+                    <p class="menu-label">
+                        Jonathan van der Wijk
+                    </p>
+                    <router-link to="/profiel" class="navbar-item">Mijn profiel</router-link>
+                    <a href="#" class="navbar-item" @click.prevent="login">Uitloggen</a>
+                </div>
             </div>
         </div>
-    </nav>
+
+        <div class="navbar-end" v-if="!loggedIn">
+            <a href="#" class="navbar-item" title="Inloggen" @click.prevent="login">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> Inloggen
+            </a>
+        </div>
+    </div>
+</nav>
 </template>
 
 <script>
@@ -102,5 +108,13 @@ h1 {
 
 .mugshot {
     border-radius: 50%;
+}
+
+.right-side {
+    width: 200px;
+    position: absolute;
+    left: -120px;
+    text-align: right;
+    padding: 1em;
 }
 </style>
