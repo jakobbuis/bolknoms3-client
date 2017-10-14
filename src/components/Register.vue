@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <section>
         <h1>Aanmelden voor maaltijden</h1>
         <div class="columns" v-for="set in sets">
             <Meal v-for="meal in set" :key="meal.id" :meal="meal"></Meal>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -26,3 +26,14 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+section {
+    margin: 1em;
+}
+h1 {
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+</style>

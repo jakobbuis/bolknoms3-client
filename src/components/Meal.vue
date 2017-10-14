@@ -1,29 +1,19 @@
 <template>
     <div class="column is-half">
-        <div class="card">
-            <div class="card-image">
-                <figure class="image is-16by10">
-                    <img src="http://via.placeholder.com/640x180" alt="Placeholder image">
-                </figure>
-            </div>
+        <div class="box">
+            <article class="media">
 
-            <div class="card-content">
-                <div class="media">
-                    <div class="media-content">
-                        <p class="title is-4">{{ date }}</p>
-                        <p class="subtitle is-6">
-                            <i class="fa fa-fw fa-clock-o"></i> {{ deadline }}
-                            <i class="fa fa-fw fa-cutlery"></i> {{ time }}
+                <div class="media-content">
+                    <div class="content">
+                        <h2>{{ date }}</h2>
+                        <button class="button">Aanmelden</button>
+                        <p class="details">
+                            <i class="fa fa-clock-o"></i> {{ deadline }} <br>
+                            <i class="fa fa-cutlery"></i> {{ time }}
                         </p>
                     </div>
                 </div>
-
-                <button class="button" @click="register">+</button>
-
-                <div class="content">
-
-                </div>
-            </div>
+            </article>
         </div>
     </div>
 </template>
@@ -42,29 +32,29 @@ export default {
         },
 
         deadline() {
-            return `${moment(this.meal.meal_timestamp).format('HH:mm')} uur`;
+            return `Aanmelden tot ${moment(this.meal.meal_timestamp).format('HH:mm')} uur`;
         },
 
         time() {
-            return `${moment(this.meal.registration_close).format('HH:mm')} uur`;
-        },
-    },
-
-    methods: {
-        register() {
-
+            return `Eten om ${moment(this.meal.registration_close).format('HH:mm')} uur`;
         },
     },
 };
 </script>
 
 <style scoped>
-    button {
-        width: 3em;
-        height: 3em;
-        position: absolute;
-        top: 5.25em;
-        right: 1em;
-        border-radius: 50%;
-    }
+h2 {
+    font-size: medium;
+    font-weight: bold;
+}
+button {
+    height: 2.5em;
+    float: left;
+}
+.details {
+    float: left;
+    margin-left: 1em;
+    font-size: small;
+    color: #666;
+}
 </style>
