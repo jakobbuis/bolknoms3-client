@@ -51,6 +51,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import OAuth from '../services/OAuth';
+import User from '../services/User';
 
 export default {
 
@@ -64,9 +65,7 @@ export default {
         ...mapGetters(['loggedIn']),
 
         profilePhoto() {
-            const uid = this.$store.state.oauth.user.username;
-            const token = this.$store.state.oauth.token.access_token;
-            return `https://people.debolk.nl/persons/${uid}/photo/128/128?access_token=${token}`;
+            return User.picture();
         },
     },
 
